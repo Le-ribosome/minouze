@@ -1,0 +1,58 @@
+//@import url("assets/bootstrap-4.4.1-dist/css/bootstrap.min.css");
+
+/*!
+ * Bootstrap v4.0.0 (https://getbootstrap.com)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+// Set theme colors
+$primary: #41403e !default;
+//  Bootstrap: 
+@import "./assets/bootstrap-4.0.0/scss/functions";
+@import "./assets/bootstrap-4.0.0/scss/variables";
+@import "./assets/bootstrap-4.0.0/scss/mixins";
+@import "./assets/bootstrap-4.0.0/scss/root";
+@import "./assets/bootstrap-4.0.0/scss/reboot";
+@import "./assets/bootstrap-4.0.0/scss/type";
+@import "./assets/bootstrap-4.0.0/scss/forms";
+@import "./assets/bootstrap-4.0.0/scss/grid";
+@import "./assets/bootstrap-4.0.0/scss/transitions";
+@import "./assets/bootstrap-4.0.0/scss/dropdown";
+
+@import "./assets/bootstrap-4.0.0/scss/input-group";
+@import "./assets/bootstrap-4.0.0/scss/custom-forms";
+
+@import "./assets/bootstrap-4.0.0/scss/nav";
+@import "./assets/bootstrap-4.0.0/scss/navbar";
+@import "./assets/bootstrap-4.0.0/scss/card";
+
+@import "./assets/bootstrap-4.0.0/scss/popover";
+
+
+@import "./assets/bootstrap-4.0.0/scss/utilities";
+@import "./assets/bootstrap-4.0.0/scss/print";
+
+// Paper
+
+/* PaperCSS core */
+@import './assets/papercss-master/src/core/config';
+@import './assets/papercss-master/src/core/mixins';
+//@import './assets/papercss-master/src/core/reset';
+
+/* Layout styling */
+//@import 'layout/container';
+//@import 'layout/flexbox';
+
+/* Content styling */
+//@import './assets/papercss-master/src/content/code';
+@import './assets/papercss-master/src/content/fonts';
+@import './assets/papercss-master/src/content/_tables.scss';
+
+/* Utilities */
+@import './assets/papercss-master/src/utilities/borders';
+//@import './assets/papercss-master/src/utilities/shadows';
+
+/* Components */
+@import './assets/papercss-master/src/components/buttons';
+@import './assets/papercss-master/src/components/alerts';

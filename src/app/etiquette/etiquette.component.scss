@@ -1,0 +1,127 @@
+@import '../../assets/variables';
+
+/**taille conteneur étiquette: fait 8.59cm par 5.03
+/* => soit 594 large / 1015 haut 
+*/
+.tailleEtiquette{
+    width:$etiquette-w;
+    height:$etiquette-h;
+    position: relative;
+    margin: $margin-vs-etiquettes;
+    .logoMinouze{
+        position: absolute;
+        width:inherit;
+        height:inherit;
+        font-family: $font-LaMinouze;
+        padding: 5px;
+        display: flex;
+        align-items: center;
+        img, h1 {
+            transform: rotate(-90deg);
+        }
+        h1{
+            font-size: $font-size-LaMinouze;
+            position: absolute;
+            /*position de "LA MINOUZE" -> modifier en // de la position de Carlos */
+            right: $pos-titre;
+            z-index: 1;
+        }
+        img{
+            width: 40%;
+            position: absolute;
+            /*position de Carlos -> modifier en // de la position de "LA MINOUZE" */
+            right: $pos-carlos;
+            z-index: 10;
+        }
+    }
+    #beerName{
+        position: absolute;
+        width: 45%;
+        height:inherit;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        right: 0;
+        color: black;
+        h2{
+            transform: rotate(-90deg);
+            font-family: $font-beerName;
+            /*TODO: DONNER LA MAIN SUR CES VALEURS DEPUIS IHM*/
+            font-size: $font-size-beerName;
+            margin-left: 18px;
+            position: fixed;
+            /*TODO: VARIABILISER CES VALEURS POUR RESPONSIVE AVEC CALC ET TOUT */
+    right: -50px;
+    height: 160px;
+    width: 280px;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    /* vertical-align: middle; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        }
+    }
+    .shape{
+        z-index: -9999;
+        position: absolute;
+        width:inherit;
+        height:inherit;
+    }
+
+    /*Partie verso*/
+
+    /*Caractéristiques générales des textes */
+    p {
+        font-family: $font-texte;
+        height:$etiquette-w;
+        width:$etiquette-h;
+        top: -100px;
+        right: 100px;
+        transform: rotate(-90deg);
+        margin: 0 !important;
+        position: absolute;
+        text-align: justify;
+    }
+    /*div parente du texte*/
+    #texteDescriptif #ingredients #alc #warning{
+        position: absolute;
+        width:inherit;
+        height:inherit;
+    }
+    #texteDescriptif{
+        /*Texte descriptif - TODO: variabiliser les valeurs et rendre responsive parceque ca va péter en autre orientation*/
+        p{
+            /*Texte descriptif police avenir taille 10.5 */
+            font-size: $size-texte-descriptif;
+            padding: 15% 5% 35% 5%;            
+        }
+    }
+    #ingredients{
+        p{
+            /*Ingrédients police avenir taille 5  */
+            font-size: $size-ingredients;
+            padding: 80% 5% 0% 5%;
+        }
+    }
+    #alc{
+        p{
+            /* % Alc 12 et gras police avenir taille 12*/
+            font-family: $font-texte-bold;
+            text-align: center;
+            font-size: $size-alc;
+            padding: 70% 5% 0% 5%;
+        }
+    }
+
+    #warning{
+        p{
+            /* Avertissement abus d'alcool police avenir taille 4 avenir  */
+            font-size: $size-warn;
+            padding: 97% 2% 0% 3%;
+        }
+    }
+
+
+}

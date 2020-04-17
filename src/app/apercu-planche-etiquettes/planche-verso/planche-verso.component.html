@@ -1,0 +1,7 @@
+<div *ngFor="let ligne of lignes">
+  <div class="d-flex flex-row">
+    <div *ngFor="let col of colonnes">
+      <app-etiquette [recto]="false" [apercu]="false"></app-etiquette>
+    </div>
+  </div>
+</div>

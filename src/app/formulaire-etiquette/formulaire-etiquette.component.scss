@@ -1,0 +1,41 @@
+@import '../../assets/variables';
+@import '../../assets/fonts';
+
+//Aperçu à l'échelle 1:$divide-factor
+#apercu{
+    width: $page-w;
+    height: $page-h;
+    border: 1px solid darkblue;
+    padding-bottom: $page-margin;
+    padding-top: $page-margin;
+    display: flex;
+    justify-content: center;
+}
+
+/* css tricks pour avoir la bordure ne biais 
+/* Même forme polygone que div parent mais fond blanc
+/* un peu moins large pour faire apparaître le bkg-color
+/* qui fait la bordure.
+*/
+.logo{
+    transform: rotate(-90deg);
+    margin:0 !important;
+    height:$etiquette-h;
+    width: $etiquette-h;
+    padding: 5px;
+    display: flex;
+    align-items:flex-end;
+    span{
+        font-size: 60px;
+        vertical-align: bottom;
+    }
+}
+.shapesLigne{
+    margin-bottom: -60px;
+}
+.shapeEtiquette{
+position: absolute;
+}
+.insideEtiquette{
+position: absolute;
+}

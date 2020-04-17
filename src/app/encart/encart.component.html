@@ -1,0 +1,20 @@
+<div *ngIf="typeEncart === 'SUCCESS'">
+  <input class="alert-state" id="alert-3" type="checkbox">
+  <div class="alert alert-success dismissible">
+    {{texteEncart}}
+  </div>
+</div>
+
+<div *ngIf="typeEncart === 'WARNING'">
+  <input class="alert-state" id="alert-4" type="checkbox">
+  <div class="alert alert-warning dismissible">
+    {{texteEncart}}
+  </div>
+</div>
+
+<div *ngIf="typeEncart ==='ERROR'">
+  <input class="alert-state" id="alert-5" type="checkbox">
+  <div class="alert alert-danger dismissible">
+    {{texteEncart}}
+  </div>
+</div>

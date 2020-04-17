@@ -1,0 +1,35 @@
+<!--Recto: Log + Nom de la bière-->
+<section id="recto" *ngIf="recto">
+  <div class="tailleEtiquette">
+    <div class="logoMinouze">
+      <img src="../../assets/img/carlos1.png" alt="LogoMinouze">
+      <h1>La Minouze</h1>
+    </div>
+    <div id="beerName">
+      <h2>{{etiquette._titre}}</h2>
+    </div>
+    <div class="shape">
+      <app-shape-etiquette></app-shape-etiquette>
+    </div>
+  </div>
+</section>
+<!--Verso: Texte + Ingrédients + Alc + Message légal-->
+<section id="verso" *ngIf="verso">
+  <div class="tailleEtiquette">
+    <div id="texteDescriptif">
+      <p>{{etiquette._texte}}</p>
+    </div>
+    <div id="alc">
+      <p>-&nbsp;&nbsp;&nbsp;{{etiquette._alc}}%&nbsp;&nbsp;&nbsp;-</p>
+    </div>
+    <div id="ingredients">
+      <p>{{etiquette._ingredients}}</p>
+    </div>
+    <div id="warning">
+      <p>{{etiquette._texteAvertissement}}</p>
+    </div>
+    <div class="shape">
+      <app-shape-etiquette></app-shape-etiquette>
+    </div>
+  </div>
+</section>

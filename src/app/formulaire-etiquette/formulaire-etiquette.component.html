@@ -1,0 +1,76 @@
+<!-- Formulaire construction étiquette -->
+<div class="card m-3">
+  <span class="card-header text-center">Nouvelle étiquette</span>
+  <div class="card-body">
+    <form [formGroup]="etiquetteForm" (ngSubmit)="onSubmit()">
+      <!--Première colone du form: Titre+Texte+Ingrédients-->
+      <div class="form-row">
+        <!--Titre-->
+        <div class="form-group col-2">
+          <label>Titre</label>
+          <input type="text" formControlName="titre" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.titre.errors }" />
+          <div *ngIf="submitted && f.titre.errors" class="invalid-feedback">
+            <div *ngIf="f.titre.errors.required">Pas de titre !?</div>
+          </div>
+        </div>
+        <!--Texte descriptif-->
+        <div class="form-group col-5">
+          <label>Texte descriptif</label>
+          <input type="text" maxlength="200" formControlName="texte" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.texte.errors }" />
+          <div *ngIf="submitted && f.texte.errors" class="invalid-feedback">
+            <div *ngIf="f.texte.errors.required">Pas de description !?</div>
+          </div>
+        </div>
+        <!--Ingrédients-->
+        <div class="form-group col-5">
+          <label>Ingrédients</label>
+          <input type="text" formControlName="ingredients" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors }" />
+          <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+            <div *ngIf="f.ingredients.errors.required">Pas d'ingrédients !?</div>
+          </div>
+        </div>
+      </div>
+      <!--Deuxième colone: %Alc + message avertissement-->
+      <div class="form-row d-flex justify-content-center">
+        <!--%Alc-->
+        <div class="form-group col-4">
+          <label>%Alc</label>
+          <input type="number" formControlName="alc" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.alc.errors }" />
+          <div *ngIf="submitted && f.alc.errors" class="invalid-feedback">
+            <div *ngIf="f.alc.errors.required">Pas d'alcool !?!? </div>
+          </div>
+        </div>
+        <!--ModerationTxt-->
+        <div class="form-group col-4">
+          <label>Message avertissement</label>
+          <input type="text" formControlName="moderationTxt" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.moderationTxt.errors }" />
+          <div *ngIf="submitted && f.moderationTxt.errors" class="invalid-feedback">
+            <div *ngIf="f.moderationTxt.errors.required">Pas de modération !?</div>
+          </div>
+        </div>
+      </div>
+      <!--Troisième colone: couleur du liseret-->
+      <div class="form-row d-flex justify-content-center">
+        <!--Couleur Liseret-->
+        <div class="form-group col-4 ">
+          <label>Couleur du liseret</label>
+          <input (colorPickerChange)="onChangeColor($event)" [(colorPicker)]="color" [style.background]="color"
+            formControlName="couleurLiseret" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.couleurLiseret.errors }" />
+          <div *ngIf="submitted && f.couleurLiseret.errors" class="invalid-feedback">
+            <div *ngIf="f.couleurLiseret.errors.required">Pas de couleur !?</div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <button class="">Générer l'étiquette !</button>
+        <button class="" type="reset" (click)="onReset()">Réinitialiser le formulaire</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<app-encart *ngIf="isEncart" [typeEncart]="typeEncart" [texteEncart]="texteEncart"></app-encart>
+<table>
+  <!-- En tête du tableau -->
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom</th>
+      <th>Aperçu</th>
+      <th>Impression</th>
+      <th></th>
+    </tr>
+  </thead>
+  <!-- Le corps du tableau -->
+  <tbody>
+    <!-- Une ligne du tableau -->
+    <tr *ngFor="let etiquette of listeEtiquettes; index as i;">
+      <!-- Si on arrive sur cette page suite à la création d'une nouvelle étiquette:
+      alors l'id de cette étiquette est en url param et le chat qui tourne remplace
+      le numéro  -->
+      <div *ngIf="nouvelleEtiquette(etiquette); then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <td class="newEtiquette"><img src="../../assets/img/carlos1.png" width="30" height="30"
+            class="d-inline-block align-top rotating" alt=""></td>
+      </ng-template>
+      <ng-template #elseBlock>
+        <td>{{i+1}}</td>
+      </ng-template>
+      <td>{{etiquette._titre}}</td>
+      <td>
+        <button (click)="apercu(etiquette)" class="btn-primary">Aperçu</button>
+      </td>
+      <td>
+        <button (click)="impression(etiquette)" class="btn-secondary">Imprimer</button>
+      </td>
+      <td id="boutonsModSup">
+        <button (click)="modification(etiquette)" class="btn-small btn-warning">Modifier</button>
+        <button (click)="suppression(etiquette)" class="btn-small btn-danger">Supprimer</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
